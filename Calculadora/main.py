@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="Calculadora Programada em Python", page_icon="🔢")
 
 # 2. Link direto da imagem do quadro de matemática
-url_da_imagem = "https://freepik.com"
+url_da_imagem = "https://img.magnific.com/vetores-gratis/fundo-de-quadro-realista-de-matematica_23-2148161537.jpg?semt=ais_hybrid&w=740&q=80"
 
 # 3. Injeção do fundo de tela corrigida (sem o parâmetro incorreto)
 st.markdown(
