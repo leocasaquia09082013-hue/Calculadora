@@ -7,16 +7,24 @@ st.set_page_config(page_title="Calculadora Programada em Python", page_icon="�
 # 2. Link direto da imagem do quadro de matemática
 url_da_imagem = "https://www.shutterstock.com/shutterstock/photos/360399383/display_1500/stock-vector-math-theory-and-mathematical-formula-equation-doodle-handwriting-icon-in-blackboard-background-with-360399383.jpg"
 
-# 3. Injeção do fundo de tela corrigida (sem o parâmetro incorreto)
+# 3. Injeção do fundo de tela e estilização dos textos para máxima visibilidade
 st.markdown(
     f"""
     <style>
+    /* Aplica a imagem de fundo de forma fixa */
     .stApp {{
         background-image: url("{url_da_imagem}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+    }}
+    
+    /* Força os títulos, textos e labels das caixas a ficarem brancos e com contorno de sombra preta */
+    h1, h2, h3, p, label, .stWidgetLabel p {{
+        color: #FFFFFF !important;
+        text-shadow: 2px 2px 6px #000000, -2px -2px 6px #000000, 2px -2px 6px #000000, -2px 2px 6px #000000 !important;
+        font-weight: bold !important;
     }}
     </style>
     """,
