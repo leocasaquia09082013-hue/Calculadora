@@ -1,8 +1,13 @@
 import math
 import streamlit as st
 
+# 1. Configuração da página (DEVE ser o primeiro comando do Streamlit no código)
+st.set_page_config(page_title="Calculadora Programada em Python", page_icon="🔢")
+
+# 2. Link direto da imagem do quadro de matemática
 url_da_imagem = "https://freepik.com"
 
+# 3. Injeção do fundo de tela corrigida (sem o parâmetro incorreto)
 st.markdown(
     f"""
     <style>
@@ -15,25 +20,27 @@ st.markdown(
     }}
     </style>
     """,
-    unsafe_allow_allowed=True,
-    unsafe_allow_html=True)
+    unsafe_allow_html=True
+)
 
-st.set_page_config(page_title="Calculadora Programada em Python", page_icon="🔢")
-
+# 4. Títulos e Textos na tela
 st.title("Vamos Calcular!")
 st.write("Uma Calculadora simples, feita por teste pelo L E O N A R D O!")
 
-num1 = st.number_input("Escolha um número:", value=None, step=1)
-num2 = st.number_input("Escolha outro número:", value=None, step=1)
+# 5. Caixas de entrada (Começam vazias e pulam de 1 em 1)
+num1 = st.number_input("Escolha o primeiro número (ou o Radicando da raiz):", value=None, step=1)
+num2 = st.number_input("Escolha o segundo número (ou o Índice da raiz):", value=None, step=1)
 
+# 6. Menu de seleção de operações
 op = st.selectbox(
     "Escolha uma Operação:",
-    ["Soma (+)", "Subtração (-)", "Multiplicação (*)", "Divisão (/)", "Potência (!)", "Raiz (√)"])
+    ["Soma (+)", "Subtração (-)", "Multiplicação (*)", "Divisão (/)", "Potência (**)", "Raiz (√)"]
+)
 
 resultado = 0
 erro = False
 
-
+# 7. Estrutura lógica de cálculos (Textos dos blocos batem 100% com o menu acima)
 if num1 is not None and num2 is not None:
 
     if op == "Soma (+)":
@@ -48,18 +55,19 @@ if num1 is not None and num2 is not None:
         else:
             erro = True
             st.error("Não é possível dividir por zero! ❌")
-        # ... (mantenha os outros if/elifs de soma, subtração, etc.)
-    elif op == "Potência (|)":
+    elif op == "Potência (**)":
         resultado = num1 ** num2
-        
     elif op == "Raiz (√)":
         if num2 != 0:
             resultado = num1 ** (1 / num2)
         else:
             erro = True
             st.error("O índice da raiz (Número 2) não pode ser zero! ❌")
+            
+    # Exibe a barra verde apenas se não houver erro matemático
     if not erro:
         st.success(f"### 🎉 Resultado: {resultado}")
 
 else:
+    # Mensagem azul que aparece enquanto as caixas estiverem em branco
     st.info("Digite os números nos campos acima para ver o cálculo. 🔢")
