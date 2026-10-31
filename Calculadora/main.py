@@ -33,12 +33,12 @@ if num1 is not None and num2 is not None:
             st.error("Não é possível dividir por zero! ❌")
     elif op == "Potência (!)":
         resultado = num1 ** num2
-    elif op == "Raiz Quadrada (√)":
+    elif op == "Raiz (√)":
         if num1 >= 0:
-                resultado = num1 ** 0.5
+                resultado = num1 ** (1 / num2)
         else:
             erro = True
-            st.error("Não é possível calcular a raiz quadrada de um número negativo! ❌")
+            st.error("Não é possível calcular a raiz de um número negativo! ❌")
     if not erro:
         st.success(f"### 🎉 Resultado: {resultado}")
 
