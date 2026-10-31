@@ -1,6 +1,23 @@
 import math
 import streamlit as st
 
+url_da_imagem = "https://freepik.com"
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("{url_da_imagem}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    """,
+    unsafe_allow_allowed=True,
+    unsafe_allow_html=True)
+
 st.set_page_config(page_title="Calculadora Programada em Python", page_icon="🔢")
 
 st.title("Vamos Calcular!")
