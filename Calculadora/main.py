@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Calculadora Programada em Python", page_icon="🔢")
+st.set_page_config(page_title="Uma simples Calculadora feita por mim❤ utilizando python", page_icon="❤")
 
 st.title("Vamos Calcular!")
 st.write("Uma Calculadora simples, feita para teste pelo L E O N A R D O!")
