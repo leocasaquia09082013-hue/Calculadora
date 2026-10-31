@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="Calculadora Programada em Python", page_icon="🔢")
 
 st.title("Vamos Calcular!")
-st.write("Uma Calculadora simples, feita por teste!")
+st.write("Uma Calculadora simples, feita para teste pelo L E O N A R D O!")
 
 num1 = st.number_input("Escolha um número:", value=None, step=1)
 num2 = st.number_input("Escolha outro número:", value=None, step=1)
